@@ -1,0 +1,46 @@
+*{
+  color: white;
+}
+.about-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.active {
+  opacity: 1;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+}
+
+.section-icon {
+  width: 500px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.section-text {
+  font-size: 18px;
+}
+

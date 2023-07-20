@@ -1,0 +1,40 @@
+/* In deiner CSS-Datei */
+.transparent-image {
+    opacity: 0.8;
+  }
+  
+  .animated-text-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .highlighted-text {
+    background: linear-gradient(to right, #4A4D75, #5D5C8E, #A5A5A5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: 'Courier New', monospace; /* Verwende eine Monospace-Schriftart für den Terminal-Look */
+  }
+  
+  /* Stile für die Schreibanimation */
+  .typed-cursor {
+    display: inline-block;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

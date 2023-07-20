@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+}
+
+.notFound img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 40%;
+}
