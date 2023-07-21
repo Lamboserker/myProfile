@@ -1,0 +1,27 @@
+/* PageNotFound.css */
+
+
+
+
+  
+  .notFound {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .notFound img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 40%;
+    z-index: 1;
+    	    
+    filter: drop-shadow(0px 100px 25px #59cce9);
+    opacity: 96%;
+  }
+  

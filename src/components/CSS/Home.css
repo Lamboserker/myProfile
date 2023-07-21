@@ -1,0 +1,46 @@
+.transparent-image {
+  opacity: 0.8;
+}
+
+.animated-text-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.highlighted-text {
+  background: linear-gradient(to right, #4a4d75, #5d5c8e, #a5a5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+/* Stile für die Schreibanimation */
+.typed-cursor {
+  display: inline-block;
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mono-font {
+  font-family: "VT323", monospace;
+}
+
+img{
+  max-height: 100%;
+  max-width: 80%;
+}

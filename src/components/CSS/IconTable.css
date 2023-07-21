@@ -1,0 +1,28 @@
+/* IconTable.css */
+
+.icon-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.icon-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.icon-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
