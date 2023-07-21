@@ -2,7 +2,7 @@
 
 * {
   color: white;
-   /* Add a subtle shadow to all text elements */
+  /* Add a subtle shadow to all text elements */
 }
 
 .about-me-container {
@@ -64,6 +64,7 @@
   width: 500px;
   height: auto;
   margin-right: 20px;
+  filter: drop-shadow(0px 33px 8px rgba(255, 255, 255, 0.31));
 }
 
 .section-text {
@@ -91,5 +92,3 @@
       0 0 30px rgba(255, 255, 255, 1); /* Glowing effect at 50% */
   }
 }
-
-
