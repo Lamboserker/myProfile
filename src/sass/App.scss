@@ -5,15 +5,17 @@
   box-sizing: border-box;
 }
 
+
 html,
 body,
 #root,
-.app {
+.App {
   margin: 0;
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
+  
   ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
@@ -22,7 +24,7 @@ body,
 
 }
 
-.app {
+.App {
   .navigation {
     display: flex;
     flex-direction: column;
@@ -91,4 +93,12 @@ img{
 .centered-container img {
   max-width: 100%;
   max-height: 100%;
+}
+
+
+
+
+.App{
+  position: relative;
+  z-index: 1;
 }

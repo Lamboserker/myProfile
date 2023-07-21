@@ -1,0 +1,73 @@
+/* Contact.css */
+
+.contact-card {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-card h2 {
+  color: #2f2f2f;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input-container input::placeholder,
+.input-container textarea::placeholder {
+  color: #a8a8a8;
+}
+
+button {
+  background-color: #5e72e4;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #364fc7;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 20px;
+  }
+
+  .contact-card h2 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

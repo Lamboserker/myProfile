@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Typed from "typed.js";
 import myImage from "../assets/IMG_7060.JPG";
 import "../components/CSS/Home.css";
+
 const Home = () => {
   useEffect(() => {
     const options = {
