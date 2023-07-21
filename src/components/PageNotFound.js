@@ -4,7 +4,7 @@ const PageNotFound = () => {
     return(  
     <div className='notFound'>
 
-    <h1>Page Not Found</h1>;
+    <h1>Page Not Found</h1>
     <img src={NotFound} alt="Page Not Found" />
     </div>
     )

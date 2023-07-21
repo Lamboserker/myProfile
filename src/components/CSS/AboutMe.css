@@ -1,6 +1,10 @@
-*{
+/* AboutMe.css */
+
+* {
   color: white;
+   /* Add a subtle shadow to all text elements */
 }
+
 .about-me-container {
   display: flex;
   flex-direction: column;
@@ -27,6 +31,28 @@
 .section-title {
   font-size: 24px;
   margin-bottom: 20px;
+  animation: flickeringText 2s linear infinite, glowingText 2s linear infinite; /* Apply the flickering and glowing effect animations */
+}
+
+@keyframes flickeringText {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7; /* Flicker at 50% opacity */
+  }
+}
+
+@keyframes glowingText {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Start and end with the original shadow */
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 1); /* Glowing effect at 50% */
+  }
 }
 
 .section-content {
@@ -42,5 +68,28 @@
 
 .section-text {
   font-size: 18px;
+  animation: flickeringText 2s linear infinite, glowingText 2s linear infinite; /* Apply the flickering and glowing effect animations */
 }
+
+@keyframes flickeringText {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7; /* Flicker at 50% opacity */
+  }
+}
+
+@keyframes glowingText {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Start and end with the original shadow */
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 1); /* Glowing effect at 50% */
+  }
+}
+
 

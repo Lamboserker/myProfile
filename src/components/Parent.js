@@ -14,7 +14,6 @@ const Parent = () => {
           <li>
             <Link to="/contact">Contact me</Link>
           </li>
-          
         </ul>
       </nav>
       <Outlet />
@@ -23,7 +22,3 @@ const Parent = () => {
 };
 
 export default Parent;
-
-
-
-

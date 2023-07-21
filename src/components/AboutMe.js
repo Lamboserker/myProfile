@@ -1,96 +1,103 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import '../components/CSS/AboutMe.css';
-import IconTable from './IconTable';
-import JsImage from '../assets/icons/JS.png';
-import HTMLIcon from '../assets/icons/HTML5.png';
-import NodeJsIcon from '../assets/icons/nodejs-logo.png';
-import npmIcon from '../assets/icons/npm.png';
-import ReactIcon from '../assets/icons/react.png';
-import GITIcon from '../assets/icons/Git.png';
-import BootstrapIcon from '../assets/icons/bootstrap.png';
-import SassIcon from '../assets/icons/sass.png'; 
-import CSS3Icon from '../assets/icons/CSS3.png';
-import SQLIcon from '../assets/icons/SQL.png';
-import PHPIcon from '../assets/icons/PHP.png';
+import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import "../components/CSS/AboutMe.css";
+import IconTable from "./IconTable";
 
+//Import the Icons
+import JsIcon from "../assets/icons/JS.png";
+import HTMLIcon from "../assets/icons/HTML5.png";
+import NodeJsIcon from "../assets/icons/nodejs-logo.png";
+import npmIcon from "../assets/icons/npm.png";
+import ReactIcon from "../assets/icons/react.png";
+import GITIcon from "../assets/icons/Git.png";
+import BootstrapIcon from "../assets/icons/bootstrap.png";
+import SassIcon from "../assets/icons/sass.png";
+import CSS3Icon from "../assets/icons/CSS3.png";
+import SQLIcon from "../assets/icons/SQL.png";
+import PHPIcon from "../assets/icons/PHP.png";
+
+//Export Function
 const AboutMe = () => {
   const [activeSection, setActiveSection] = useState(0);
 
   const sections = [
     {
-      title: 'My Skills',
+      title: "My Skills",
       icon: null,
       text: null,
       ref: useRef(null),
     },
+    // Programming Languages
     {
-      title: 'JavaScript',
-      icon: JsImage,
-      text: 'JavaScript and I go together like peanut butter and jelly, always cooking up interactivity.',
+      title: "JavaScript",
+      icon: JsIcon,
+      text: "JavaScript and I go together like peanut butter and jelly, always cooking up interactivity.",
       ref: useRef(null),
     },
+    // Web Technologies
     {
-      title: 'HTML5',
+      title: "HTML5",
       icon: HTMLIcon,
-      text: 'I can create websites that make HTML5 jealous of its own elegance.',
+      text: "I can create websites that make HTML5 jealous of its own elegance.",
       ref: useRef(null),
     },
     {
-      title: 'CSS3',
+      title: "CSS3",
       icon: CSS3Icon,
-      text: 'CSS3 and I have an unspoken understanding – it always styles, and I never break!',
+      text: "CSS3 and I have an unspoken understanding – it always styles, and I never break!",
       ref: useRef(null),
     },
-    // Add placeholders for Web Technology 3, 4, and 5
+
     {
-      title: 'React',
+      title: "React",
       icon: ReactIcon,
-      text: 'React is the magic wand in my coder`s toolkit, turning complex UIs into works of art.',
+      text: "React is the magic wand in my coder`s toolkit, turning complex UIs into works of art.",
       ref: useRef(null),
     },
     {
-      title: 'Bootstrap',
+      title: "Bootstrap",
       icon: BootstrapIcon,
-      text: 'Bootstrap is my web development wingman, making responsive layouts a breeze.',	
+      text: "Bootstrap is my web development wingman, making responsive layouts a breeze.",
       ref: useRef(null),
     },
     {
-      title: 'Sass',
+      title: "Sass",
       icon: SassIcon,
-      text: 'When Sass is around, my CSS feels like it`s dressed in designer clothes.',
+      text: "When Sass is around, my CSS feels like it`s dressed in designer clothes.",
       ref: useRef(null),
     },
+    // Backend Technologies
     {
-      title: 'NodeJS',
+      title: "NodeJS",
       icon: NodeJsIcon,
-      text: 'Node.js swoops into action like the Avengers, assembling a team of powerful packages to save your web applications from sluggishness and deliver superhero-level performance!',
+      text: "Node.js swoops into action like the Avengers, assembling a team of powerful packages to save your web applications from sluggishness and deliver superhero-level performance!",
       ref: useRef(null),
     },
-    // Add placeholders for Backend Technology 2 and 3
+
     {
-      title: 'SQL',
+      title: "SQL",
       icon: SQLIcon,
-      text: 'SQL lets me dance with databases, and together, we tango through data like pros.',
+      text: "SQL lets me dance with databases, and together, we tango through data like pros.",
       ref: useRef(null),
     },
     {
-      title: 'PHP',
+      title: "PHP",
       icon: PHPIcon,
-      text: 'PHP and I are like a dynamic duo, scripting server-side wonders.',
+      text: "PHP and I are like a dynamic duo, scripting server-side wonders.",
       ref: useRef(null),
     },
+    //Package Manager Control
     {
-      title: 'npm',
+      title: "npm",
       icon: npmIcon,
-      text: 'npm is my trusty genie, granting my wishes for packages with a simple command.',
+      text: "npm is my trusty genie, granting my wishes for packages with a simple command.",
       ref: useRef(null),
     },
-    // Add a placeholder for Package Manager 2
+
     {
-      title: 'GIT',
+      title: "GIT",
       icon: GITIcon,
-      text: 'GIT is my version control BFF, ensuring my code history remains drama-free.',
+      text: "GIT is my version control BFF, ensuring my code history remains drama-free.",
       ref: useRef(null),
     },
   ];
@@ -110,20 +117,26 @@ const AboutMe = () => {
       setActiveSection(activeIndex);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
+
   const sectionTitleVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
+      y: "-100%", // Move the heading above the viewport initially
     },
     visible: {
       opacity: 1,
       y: 0,
+      transition: {
+        type: "spring", // You can customize the type of transition
+        damping: 20, // Adjust damping to control the "stamping" effect
+        stiffness: 300, // Adjust stiffness for the bounce effect
+      },
     },
   };
 
@@ -131,7 +144,7 @@ const AboutMe = () => {
     hidden: {
       opacity: 0,
       scale: 0.5,
-      x: '-100%',
+      x: "-100%",
     },
     visible: {
       opacity: 1,
@@ -140,50 +153,66 @@ const AboutMe = () => {
     },
   };
 
+  useEffect(() => {
+    // Trigger the animation for the first heading on page load
+    const firstSectionRef = sections[0].ref.current;
+    if (firstSectionRef) {
+      const animateFirstHeading = () => {
+        firstSectionRef.style.visibility = "visible";
+        firstSectionRef.style.opacity = 1;
+        firstSectionRef.style.transition = "opacity 1s, transform 1s";
+        firstSectionRef.style.transform = "translateY(0)";
+      };
+      animateFirstHeading();
+    }
+  }, []);
+
   return (
     <div className="about-me-container">
-    {sections.map((section, index) => (
-      <div
-        key={index}
-        ref={section.ref}
-        className={`section-container ${activeSection === index ? 'active' : ''}`}
-      >
-        <motion.div
-          className="section-title"
-          initial="hidden"
-          animate={activeSection === index ? 'visible' : 'hidden'}
-          variants={sectionTitleVariants}
+      {sections.map((section, index) => (
+        <div
+          key={index}
+          ref={section.ref}
+          className={`section-container ${
+            activeSection === index ? "active" : ""
+          }`}
         >
-          <h2>{section.title}</h2>
-        </motion.div>
+          <motion.div
+            className="section-title"
+            initial="hidden"
+            animate={activeSection === index ? "visible" : "hidden"}
+            variants={sectionTitleVariants}
+          >
+            <h2>{section.title}</h2>
+          </motion.div>
 
-        <div className="section-content">
-          {section.icon && (
-            <motion.img
-              src={section.icon}
-              alt={`${section.title} Icon`}
-              className="section-icon"
-              initial="hidden"
-              animate={activeSection === index ? 'visible' : 'hidden'}
-              variants={iconVariants}
-            />
-          )}
-          {section.text && (
-            <motion.p
-              className="section-text"
-              initial="hidden"
-              animate={activeSection === index ? 'visible' : 'hidden'}
-              variants={sectionTitleVariants}
-            >
-              {section.text}
-            </motion.p>
-          )}
+          <div className="section-content">
+            {section.icon && (
+              <motion.img
+                src={section.icon}
+                alt={`${section.title} Icon`}
+                className="section-icon"
+                initial="hidden"
+                animate={activeSection === index ? "visible" : "hidden"}
+                variants={iconVariants}
+              />
+            )}
+            {section.text && (
+              <motion.p
+                className="section-text"
+                initial="hidden"
+                animate={activeSection === index ? "visible" : "hidden"}
+                variants={sectionTitleVariants}
+              >
+                {section.text}
+              </motion.p>
+            )}
+          </div>
         </div>
-      </div>
-    ))}
-    <IconTable sections={sections.slice(1)} />
-  </div>
-);
+      ))}
+      <IconTable sections={sections.slice(1)} />
+    </div>
+  );
 };
 
 export default AboutMe;
