@@ -12,6 +12,7 @@ import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Footer";
+import MyWork from "./components/MyWork";
 
 //App Function
 
@@ -51,10 +52,12 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/aboutme" element={<AboutMe />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/mywork" element={<MyWork />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
+      {/*Here will come the content of the components*/}
       <Footer />
     </div>
   );
