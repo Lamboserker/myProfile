@@ -1,7 +1,7 @@
 /* Contact.css */
 
 .contact-card {
-  background-color: #f7f7f7;
+  background: linear-gradient(to bottom right, #9333ea, #4f46e5);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -10,7 +10,8 @@
 }
 
 .contact-card h2 {
-  color: #2f2f2f;
+  color: white;
+
   font-size: 28px;
   text-align: center;
   margin-bottom: 30px;
@@ -20,19 +21,35 @@
   margin-bottom: 20px;
 }
 
-.input-container input,
-.input-container textarea {
+.input-container input {
   width: 100%;
-  padding: 15px;
-  border: 1px solid #d1d1d1;
-  border-radius: 5px;
+  padding: 10px 0;
   font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid #fff;
   outline: none;
+  background: transparent;
 }
 
 .input-container textarea {
+  color: black;
   resize: vertical;
   min-height: 100px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.input-container textarea:focus {
+  outline: none;
+}
+
+.input-container textarea::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .input-container input::placeholder,
@@ -40,21 +57,6 @@
   color: #a8a8a8;
 }
 
-button {
-  background-color: #5e72e4;
-  color: white;
-  border: none;
-  padding: 15px 25px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-
-button:hover {
-  background-color: #364fc7;
-}
 
 /* Responsive layout for smaller screens */
 @media (max-width: 480px) {
@@ -65,9 +67,28 @@ button:hover {
   .contact-card h2 {
     font-size: 24px;
   }
-
-  button {
-    padding: 12px 20px;
-    font-size: 14px;
-  }
 }
+
+/* CSS-Regeln wie zuvor */
+
+/* Placeholder-Styling für input */
+.input-container input:focus::placeholder {
+  font-size: 12px; /* Beispiel: Kleinerer Font bei Fokus */
+  transform: translate(-50%, -80%); /* Beispiel: Verschiebung nach oben */
+  color: #a8a8a8;
+}
+
+/* Placeholder-Styling für textarea */
+.input-container textarea:focus::placeholder {
+  font-size: 12px; /* Beispiel: Kleinerer Font bei Fokus */
+  transform: translate(-50%, -80%); /* Beispiel: Verschiebung nach oben */
+  color: #a8a8a8;
+  outline: none;
+}
+
+/* Responsive layout for smaller screens wie zuvor */
+
+
+
+
+

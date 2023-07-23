@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+
 import '../components/CSS/Contact.css'; // Styling file for the Contact component
+import Test from './Test'
+
+
+
 
 const Contact = () => {
   // State variables to store input values
@@ -64,7 +69,7 @@ const Contact = () => {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <Test/>
       </form>
     </div>
   );

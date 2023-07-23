@@ -14,6 +14,9 @@ const Parent = () => {
           <li>
             <Link to="/contact">Contact me</Link>
           </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

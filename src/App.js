@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Install the Styles
@@ -12,10 +13,12 @@ import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Footer";
-
+import Projects from "./components/Projects";
 //App Function
 
 function App() {
+ 
+
   return (
     <div className="App">
       <div className="background">
@@ -51,6 +54,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/aboutme" element={<AboutMe />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
