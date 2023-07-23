@@ -13,8 +13,12 @@ import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
-//App Function
 
+// import images
+import waveSvg from "./assets/svg/wave.svg";
+
+
+//App Function
 function App() {
  
 
@@ -59,7 +63,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
-      
+      <img src={waveSvg} alt="Waveform" className='wave' />
     </div>
   );
 }

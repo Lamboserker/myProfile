@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
   faTwitter,
-  faGoogle,
   faInstagram,
   faLinkedinIn,
   faGithub,
@@ -12,9 +11,10 @@ import './CSS/Footer.css'
 
 const Footer = () => {
   return (
+    
     <div className='footer-position'>
-    <footer className="bg-dark text-center text-white">
-      <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+    <footer className=" text-center text-white">
+      <div className="text-center p-3">
        <p> © 2023 Copyright by Lukas Lamberz</p> 
        <section className="mb-4">
           {/* Social media icons */}
@@ -41,6 +41,7 @@ const Footer = () => {
       </div>
     </footer>
     </div>
+    
   );
 };
 

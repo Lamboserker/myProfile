@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Typed from "typed.js";
-import myImage from "../assets/IMG_7060.JPG";
 import "../components/CSS/Home.css";
 
 const Home = () => {
@@ -37,17 +36,12 @@ const Home = () => {
               </h1>
             </div>
           </div>
-          <div className="col-12 col-md-6">
-            <div className="image-container">
-              <img
-                src={myImage}
-                className="card-img-top h-100 rounded transparent-image"
-                alt="Bild von mir"
-              />
+         
+             <div className="img"> 
+             </div>
             </div>
           </div>
-        </div>
-      </div>
+        
     </main>
   );
 };

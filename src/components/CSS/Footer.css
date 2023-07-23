@@ -2,20 +2,24 @@ main{
     margin-bottom: 10em;
 }
 .footer-position{
-    flex-shrink: 0; /* Ensure the footer doesn't shrink */
   width: 100%;
   position: fixed;
   bottom: 0;
-  left: 0;
-}
-
+  right:1 ;
+  z-index: 0;
+  z-index: 999;
 
   
- 
-.hover{
-    
-    color: black;
 }
+
+
+
+  .footer-position{
+   background-color: transparent;
+  }
+ 
+
 .hover:hover{
     background-color: rgb(110, 110, 110);
 }
+

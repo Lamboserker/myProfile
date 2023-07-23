@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 // Import the icons
-import AlertIcon from "../assets/icons/exclamation.png";
 import RoundedIcon from "../assets/icons/alert.png";
 
 import "../components/CSS/Springmodal.css";
@@ -24,6 +23,7 @@ const ExampleWrapper = () => {
 
 const SpringModal = ({ isOpen, setIsOpen }) => {
   return (
+   
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -44,12 +44,8 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
               <img src={RoundedIcon} alt="Alert Icon" className="imgdeg" />
             </div>
            
-            <div className="relative z-10 padding-bottom">
-              <div className="bg-white w-16 h-16 mb-2 rounded-full text-3xl text-indigo-600 grid place-items-center mx-auto">
-                <div className="icon-container">
-                  <img src={AlertIcon} alt="Alert Icon" className="img" />
-                </div>
-              </div>
+            <div className="relative z-10 padding-bottom margin">
+              
               <h3 className="text-3xl font-bold text-center mb-2">
                 Everything entered correctly?
               </h3>
@@ -84,6 +80,8 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
         </motion.div>
       )}
     </AnimatePresence>
+   
+
   );
 };
 
