@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import '../components/CSS/Contact.css'; // Styling file for the Contact component
-import Test from './Test'
+import ExampleWrapper from './Test'
 
 
 
@@ -69,7 +69,7 @@ const Contact = () => {
             required
           />
         </div>
-        <Test/>
+        <ExampleWrapper/>
       </form>
     </div>
   );

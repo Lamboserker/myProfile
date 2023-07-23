@@ -12,8 +12,8 @@ const Home = () => {
       ],
       typeSpeed: 150,
       loop: true,
-      showCursor: true, // Cursor anzeigen, um den Terminal-Effekt zu erzeugen
-      cursorChar: "|", // Benutzerdefinierter Cursor (optional)
+      showCursor: true,
+      cursorChar: "|",
     };
 
     const typed = new Typed(".typed-text", options);
@@ -32,18 +32,19 @@ const Home = () => {
               <h1 className="display-4 text-light">
                 <mark className="highlighted-text">
                   <span className="typed-text mono-font"></span>
-                  <span className="typed-cursor"></span>{" "}
-                  {/* Element für den animierten Cursor */}
+                  <span className="typed-cursor"></span>
                 </mark>
               </h1>
             </div>
           </div>
           <div className="col-12 col-md-6">
-            <img
-              src={myImage}
-              className="card-img-top h-100 rounded transparent-image"
-              alt="Bild von mir"
-            />
+            <div className="image-container">
+              <img
+                src={myImage}
+                className="card-img-top h-100 rounded transparent-image"
+                alt="Bild von mir"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 // Install the Styles
 import "./sass/App.scss";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS import
@@ -60,6 +59,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
+      
     </div>
   );
 }

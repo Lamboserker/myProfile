@@ -17,7 +17,6 @@
   font-size: 3rem;
 }
 
-/* Stile für die Schreibanimation */
 .typed-cursor {
   display: inline-block;
   opacity: 1;
@@ -40,7 +39,9 @@
   font-family: "VT323", monospace;
 }
 
-img{
+/* Additional CSS for the image container */
+.image-container {
+  position: relative;
   max-height: 100%;
   max-width: 80%;
 }

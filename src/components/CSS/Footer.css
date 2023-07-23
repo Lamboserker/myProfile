@@ -1,8 +1,21 @@
-.footer{
+main{
+    margin-bottom: 10em;
+}
+.footer-position{
+    flex-shrink: 0; /* Ensure the footer doesn't shrink */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+
+  
+ 
+.hover{
+    
+    color: black;
+}
+.hover:hover{
+    background-color: rgb(110, 110, 110);
 }
