@@ -82,3 +82,39 @@
 }
 
 /* Responsive layout for smaller screens wie zuvor */
+
+
+/* Footer.css */
+
+/* Hiding the icon text initially */
+.icon-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Showing the icon text on hover */
+.icon-container:hover .icon-text {
+  opacity: 1;
+}
+
+/* Shrinking the icon on hover */
+.icon-container:hover .icon {
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+/* Showing the icon when not hovered */
+.icon-container .icon {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Class to hide the icon */
+.hide {
+  opacity: 0;
+}
+
+/* Class to show the icon text */
+.show {
+  opacity: 1;
+}

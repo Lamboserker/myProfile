@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -10,51 +10,93 @@ import {
 import "./CSS/Footer.css";
 
 const Footer = () => {
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+
+  const handleIconHover = (iconName) => {
+    setHoveredIcon(iconName);
+  };
+
+  const handleIconLeave = () => {
+    setHoveredIcon(null);
+  };
+
+  const getIconName = (iconName) => {
+    switch (iconName) {
+      case "faFacebookF":
+        return "Facebook";
+      case "faTwitter":
+        return "Twitter";
+      case "faInstagram":
+        return "Instagram";
+      case "faLinkedinIn":
+        return "LinkedIn";
+      case "faGithub":
+        return "GitHub";
+      default:
+        return "";
+    }
+  };
+
   return (
     <div className="footer-position">
-      <footer className=" text-center text-white">
+      <footer className="text-center text-white ">
         <div className="text-center p-3">
-          <p> © 2023 Copyright by Lukas Lamberz</p>
+          <p>© 2023 Copyright by Lukas Lamberz</p>
           <section className="mb-4">
             {/* Social media icons */}
-            <div className="row justify-content-center mb-4">
-              <div className="col-auto">
-                <a
-                  className="btn btn-outline-light btn-floating m-1 hover"
-                  href="https://www.facebook.com/lukas.lamberz/"
-                  role="button"
-                >
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </a>
-                <a
-                  className="btn btn-outline-light btn-floating m-1 hover"
-                  href="https://twitter.com/LamberzLukas"
-                  role="button"
-                >
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a
-                  className="btn btn-outline-light btn-floating m-1 hover"
-                  href="https://instagram.com/blcklmb96?igshid=OGQ5ZDc2ODk2ZA=="
-                  role="button"
-                >
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                  className="btn btn-outline-light btn-floating m-1 hover"
-                  href="https://www.linkedin.com/in/lukas-oliver-lamberz-206b30262/"
-                  role="button"
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </a>
-                <a
-                  className="btn btn-outline-light btn-floating m-1 hover"
-                  href="https://github.com/Lamboserker"
-                  role="button"
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
+            <div className="d-flex justify-content-center mb-3">
+              <div className="icon-container" onMouseEnter={() => handleIconHover("faFacebookF")} onMouseLeave={handleIconLeave}>
+                <FontAwesomeIcon
+                  icon={faFacebookF}
+                  size="2x"
+                  className={`icon ${hoveredIcon === "faFacebookF" ? "hide" : ""}`}
+                />
+                <span className={`icon-text ${hoveredIcon === "faFacebookF" ? "show" : ""}`}>
+                  Facebook
+                </span>
               </div>
+              <div className="icon-container" onMouseEnter={() => handleIconHover("faTwitter")} onMouseLeave={handleIconLeave}>
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  size="2x"
+                  className={`icon ${hoveredIcon === "faTwitter" ? "hide" : ""}`}
+                />
+                <span className={`icon-text ${hoveredIcon === "faTwitter" ? "show" : ""}`}>
+                  Twitter
+                </span>
+              </div>
+              <div className="icon-container" onMouseEnter={() => handleIconHover("faInstagram")} onMouseLeave={handleIconLeave}>
+  <FontAwesomeIcon
+    icon={faInstagram}
+    size="2x"
+    className={`icon ${hoveredIcon === "faInstagram" ? "hide" : ""}`}
+  />
+  <span className={`icon-text ${hoveredIcon === "faInstagram" ? "show" : ""}`}>
+    Instagram
+  </span>
+</div>
+
+<div className="icon-container" onMouseEnter={() => handleIconHover("faLinkedinIn")} onMouseLeave={handleIconLeave}>
+  <FontAwesomeIcon
+    icon={faLinkedinIn}
+    size="2x"
+    className={`icon ${hoveredIcon === "faLinkedinIn" ? "hide" : ""}`}
+  />
+  <span className={`icon-text ${hoveredIcon === "faLinkedinIn" ? "show" : ""}`}>
+    LinkedIn
+  </span>
+</div>
+
+<div className="icon-container" onMouseEnter={() => handleIconHover("faGithub")} onMouseLeave={handleIconLeave}>
+  <FontAwesomeIcon
+    icon={faGithub}
+    size="2x"
+    className={`icon ${hoveredIcon === "faGithub" ? "hide" : ""}`}
+  />
+  <span className={`icon-text ${hoveredIcon === "faGithub" ? "show" : ""}`}>
+    GitHub
+  </span>
+</div>
             </div>
           </section>
         </div>
