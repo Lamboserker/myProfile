@@ -1,75 +1,46 @@
-import React, { useState } from "react";
+import {useState} from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+import ExampleWrapper from './Test';
+import './CSS/Contact.css';
 
-import "../components/CSS/Contact.css"; // Styling file for the Contact component
-import ExampleWrapper from "./Test";
-
-const Contact = () => {
-  // State variables to store input values
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+function Contact() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [state, handleSubmit] = useForm("xleydapv");
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+  }
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Process the form data here (you can add your logic to send the data to a server or perform any other action)
-    // For this example, we'll just log the data to the console
-    console.log("Form data:", { firstName, lastName, email, message });
-    // Reset the form after submission
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setMessage("");
+    const isValid = await handleSubmit(e);
+    if (isValid) {
+      setIsOpen(true); // Open the modal after successful form submission.
+    }
   };
 
   return (
-    <div className="contact-card">
-      <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <input
-            type="text"
-            id="firstName"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-container">
-          <input
-            type="text"
-            id="lastName"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-container">
-          <input
-            type="email"
-            id="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-container">
-          <textarea
-            id="message"
-            placeholder="Message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          />
-        </div>
-        <ExampleWrapper />
-      </form>
-    </div>
+    <div  className="contact-card">
+    <h2 >Contact Me</h2>
+    <form onSubmit={handleFormSubmit}>
+      <div  className="input-container">
+        <label htmlFor="fullName">Full name</label>
+        <input  id="" type="text" name="name" />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
+      </div>
+      <div  className="input-container">
+        <label htmlFor="email">Email Address</label>
+        <input id="email" type="email" name="email" />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+      </div>
+      <div  className="input-container">
+        <label htmlFor='message'>Your Message</label>
+        <textarea  id="message" name="message" />
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
+      </div>
+     
+    </form>
+    <ExampleWrapper isOpen={isOpen} setIsOpen={setIsOpen} />
+  </div>
   );
-};
+}
 
 export default Contact;

@@ -10,9 +10,7 @@ const Parent = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <Link to="/" className="navbar-brand">
-          Lukas Oliver Lamberz
-        </Link>
+      
         <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
           <span className="navbar-toggler-icon"></span>
         </button>

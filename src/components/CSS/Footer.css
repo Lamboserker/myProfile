@@ -8,12 +8,8 @@ main {
   right: 1;
   z-index: 0;
   z-index: 999;
-}
-
-.footer-position {
   background-color: transparent;
 }
-
 .hover:hover {
   background-color: rgb(110, 110, 110);
 }

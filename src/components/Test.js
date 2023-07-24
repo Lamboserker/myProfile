@@ -18,7 +18,14 @@ const ExampleWrapper = () => {
   );
 };
 
-const SpringModal = ({ isOpen, setIsOpen }) => {
+const SpringModal = ({ isOpen, setIsOpen, onSubmitForm }) => {
+  const handleFormSubmit = () => {
+    // Assuming you have the form data (firstName, lastName, and other fields)
+    // collected and ready to be submitted, pass it to the onSubmitForm function.
+    // onSubmitForm will handle the actual form submission to the server.
+    onSubmitForm();
+    setIsOpen(false); // Close the modal after submission (you may modify this as per your requirements).
+  };
   return (
     <AnimatePresence>
       {isOpen && (
@@ -65,7 +72,7 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="whitebutton"
+                  className="whitebutton" 
                 >
                   Ready to send!
                 </button>
