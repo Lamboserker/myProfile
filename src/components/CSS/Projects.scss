@@ -158,20 +158,13 @@ $bp-lg: 800px;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   font-size: 0.65rem;
+  font-weight: bold;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
-  background-color: black;
   color: white;
+  background-color: black;
   border: none;
   
-  .first-btn {
-    font-weight: bold; 
-  }
-  
-  .first-btn:hover {
-    background-color: rgba(255, 255, 255, 0.6); 
-  }
-
   &:hover {
     background-color: lighten(black, 5%);
   }

@@ -1,25 +1,19 @@
-main{
-    margin-bottom: 10em;
+main {
+  margin-bottom: 10em;
 }
-.footer-position{
+.footer-position {
   width: 100%;
   position: fixed;
   bottom: 0;
-  right:1 ;
+  right: 1;
   z-index: 0;
   z-index: 999;
-
-  
 }
 
-
-
-  .footer-position{
-   background-color: transparent;
-  }
- 
-
-.hover:hover{
-    background-color: rgb(110, 110, 110);
+.footer-position {
+  background-color: transparent;
 }
 
+.hover:hover {
+  background-color: rgb(110, 110, 110);
+}

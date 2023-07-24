@@ -1,14 +1,14 @@
 .img {
   width: 500px;
-  height: 500px!important;
-  border:2px solid #fff;
+  height: 500px !important;
+  border: 2px solid #fff;
   background: url(../../assets/IMG_7060.jpg) no-repeat;
   -moz-box-shadow: 10px 10px 5px #ccc;
   -webkit-box-shadow: 10px 10px 5px #ccc;
   box-shadow: 10px 10px 5px #ccc;
-  -moz-border-radius:25px;
-  -webkit-border-radius:25px;
-  border-radius:25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
 }
 
 .animated-text-container {

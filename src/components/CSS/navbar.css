@@ -23,10 +23,13 @@ li a {
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 5px;
-  
 }
 
 li a:hover {
   background-color: #8982f3;
   color: black;
+}
+
+#navbarNav {
+  justify-content: center;
 }

@@ -36,12 +36,10 @@ const Home = () => {
               </h1>
             </div>
           </div>
-         
-             <div className="img"> 
-             </div>
-            </div>
-          </div>
-        
+
+          <div className="img"></div>
+        </div>
+      </div>
     </main>
   );
 };

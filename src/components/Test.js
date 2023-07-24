@@ -10,10 +10,7 @@ const ExampleWrapper = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="px-4 py-64 bg-slate-900 grid place-content-center">
-      <button
-        onClick={() => setIsOpen(true)}
-        className="send"
-      >
+      <button onClick={() => setIsOpen(true)} className="send">
         Send Message
       </button>
       <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -23,7 +20,6 @@ const ExampleWrapper = () => {
 
 const SpringModal = ({ isOpen, setIsOpen }) => {
   return (
-   
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -43,9 +39,8 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
             <div className="icon-side">
               <img src={RoundedIcon} alt="Alert Icon" className="imgdeg" />
             </div>
-           
+
             <div className="relative z-10 padding-bottom margin">
-              
               <h3 className="text-3xl font-bold text-center mb-2">
                 Everything entered correctly?
               </h3>
@@ -80,8 +75,6 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
         </motion.div>
       )}
     </AnimatePresence>
-   
-
   );
 };
 

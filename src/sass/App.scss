@@ -15,11 +15,13 @@ body,
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
-  
+
   ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+  }
 
 
 }
@@ -30,7 +32,8 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* This will center the image both vertically and horizontally */
+  height: 100vh;
+  /* This will center the image both vertically and horizontally */
 }
 
 /* Optional styles for the image, adjust as needed */
@@ -39,12 +42,12 @@ body,
 
 
 
-.App{
+.App {
   position: relative;
   z-index: 2;
 }
 
-.wave{
+.wave {
   position: fixed;
   bottom: -63px;
   opacity: 40%;

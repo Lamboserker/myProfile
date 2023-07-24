@@ -1,29 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import '../components/CSS/Contact.css'; // Styling file for the Contact component
-import ExampleWrapper from './Test'
-
-
-
+import "../components/CSS/Contact.css"; // Styling file for the Contact component
+import ExampleWrapper from "./Test";
 
 const Contact = () => {
   // State variables to store input values
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     // Process the form data here (you can add your logic to send the data to a server or perform any other action)
     // For this example, we'll just log the data to the console
-    console.log('Form data:', { firstName, lastName, email, message });
+    console.log("Form data:", { firstName, lastName, email, message });
     // Reset the form after submission
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setMessage('');
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -69,7 +66,7 @@ const Contact = () => {
             required
           />
         </div>
-        <ExampleWrapper/>
+        <ExampleWrapper />
       </form>
     </div>
   );

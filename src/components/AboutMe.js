@@ -165,7 +165,7 @@ const AboutMe = () => {
       };
       animateFirstHeading();
     }
-  }, );
+  });
 
   return (
     <div className="about-me-container">
