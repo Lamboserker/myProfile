@@ -1,69 +1,27 @@
+import { motion } from "framer-motion";
 import "../components/CSS/IconTable.css";
 
 const IconTable = ({ sections }) => {
-  const programmingLanguages = sections.filter(
-    (section) => section.category === "Programming Languages"
-  );
-  const webTechnologies = sections.filter(
-    (section) => section.category === "Web Technologies"
-  );
-  const backendTechnologies = sections.filter(
-    (section) => section.category === "Backend Technology"
-  );
-  const packageManagers = sections.filter(
-    (section) => section.category === "Package Managers and Version Control"
-  );
+  // Duplicate the sections array to create a seamless loop
+  const duplicatedSections = [...sections, ...sections];
 
   return (
     <div className="icon-table-container">
-      <div className="icon-column">
-        {programmingLanguages.map((section, index) => (
-          <div key={index} className="icon-category">
-            <img
+      <motion.div className="icon-column" initial={{ x: 0 }} animate={{ x: "-100%" }} transition={{ repeat: Infinity, duration: 10 }}>
+        {duplicatedSections.map((section, index) => (
+          <motion.div key={index} className="icon-category" style={{ filter: "grayscale(100%)" }}>
+            <motion.img
               src={section.icon}
               alt={`${section.title} Icon`}
               className="icon-image"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             />
             <p>{section.title}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <div className="icon-column">
-        {webTechnologies.map((section, index) => (
-          <div key={index} className="icon-category">
-            <img
-              src={section.icon}
-              alt={`${section.title} Icon`}
-              className="icon-image"
-            />
-            <p>{section.title}</p>
-          </div>
-        ))}
-      </div>
-      <div className="icon-column">
-        {backendTechnologies.map((section, index) => (
-          <div key={index} className="icon-category">
-            <img
-              src={section.icon}
-              alt={`${section.title} Icon`}
-              className="icon-image"
-            />
-            <p>{section.title}</p>
-          </div>
-        ))}
-      </div>
-      <div className="icon-column">
-        {packageManagers.map((section, index) => (
-          <div key={index} className="icon-category">
-            <img
-              src={section.icon}
-              alt={`${section.title} Icon`}
-              className="icon-image"
-            />
-            <p>{section.title}</p>
-          </div>
-        ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

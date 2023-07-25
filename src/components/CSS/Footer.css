@@ -1,3 +1,4 @@
+
 main {
   margin-bottom: 10em;
 }
@@ -5,10 +6,17 @@ main {
   width: 100%;
   position: fixed;
   bottom: 0;
-  
-  z-index: 999;
+  z-index: -1;
   background-color: transparent;
+
+ 
 }
-.hover:hover {
-  background-color: rgb(110, 110, 110);
+
+
+a:hover{
+text-decoration: none!important;
+}
+
+.icon-text {
+  padding: 13px;
 }

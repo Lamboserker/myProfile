@@ -1,9 +1,5 @@
 /* AboutMe.css */
 
-* {
-  color: white;
-  /* Add a subtle shadow to all text elements */
-}
 
 .about-me-container {
   display: flex;

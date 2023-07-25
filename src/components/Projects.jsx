@@ -1,49 +1,112 @@
-import "./CSS/Projects.scss";
+import React, { useEffect } from "react";
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
-const cards = [
-  {
-    title: "FiveM server-homepage",
-    copy: "I developed a FiveM server-homepage, where you can find all the vital information about the server.",
-    button: "View code",
-    URL: "https://github.com/Lamboserker/COLA_HOMEPAGE",
-  },
-  {
-    title: "Pokemon game",
-    copy: "As a school project, I built a Pokemon game, offering a console-based Pokemon battle experience.",
-    button: "View code",
-    URL: "https://github.com/Lamboserker/pb-project",
-  },
-  {
-    title: "First version of this website",
-    copy: "Explore the first version of this website, a dreamy desert you´ve always yearned to see.",
-    button: "View code",
-    URL: "https://github.com/Lamboserker/portfolio",
-  },
-];
+import "./CSS/Projects.css";
 
-const handleButtonClick = (url) => {
-  window.open(url, "_blank"); // Öffnet den Link in einem neuen Tab
-};
+//import images
+import VerIcon from "../assets/IMG_7060.jpg";
+import ColaIcon from "../assets/1.png";
+import PokemonIcon from "../assets/pokemon.jpg";
+const Project = () => {
+  useEffect(() => {
+    const cardsContainer = document.querySelector('.cards');
+    const cards = document.querySelectorAll('.card');
+    cardsContainer.style.setProperty('--cards-count', cards.length);
+    cardsContainer.style.setProperty('--card-height', `${cards[0].clientHeight}px`);
+    Array.from(cards).forEach((card, index) => {
+      const offsetTop = 20 + index * 20;
+      card.style.paddingTop = `${offsetTop}px`;
+      if (index === cards.length - 1) {
+        return;
+      }
+      const toScale = 1 - (cards.length - 1 - index) * 0.1;
+      const nextCard = cards[index + 1];
+      const cardInner = card.querySelector('.card__inner');
+      cardInner.style.transition = 'transform 0.3s, filter 0.3s';
 
-const CardComponent = () => {
+      const handleScroll = () => {
+        const { top, height } = nextCard.getBoundingClientRect();
+        const percentageY = Math.max(0, Math.min(1, (window.innerHeight - top) / height));
+        cardInner.style.transform = `scale(${1 - percentageY * 0.1})`;
+        cardInner.style.filter = `brightness(${1 - percentageY * 0.4})`;
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    });
+  }, []);
   return (
-    <main className="page-content">
-      {cards.map((card, index) => (
-        <div className={`card ${index === 0 ? "first-card" : ""}`} key={index}>
-          <div className="content">
-            <h2 className="title">{card.title}</h2>
-            <p className="copy">{card.copy}</p>
-            <button
-              className={`btn ${index === 0 ? "first-btn" : ""}`}
-              onClick={() => handleButtonClick(card.URL)}
-            >
-              View code
-            </button>
-          </div>
+    <ParallaxProvider>
+      <div>
+        <div className="space space--small"></div>
+        <div className="cards">
+          <Parallax y={[-20, 20]}>
+            <div className="card" data-index="0">
+              <div className="card__inner">
+                <div className="card__image-container">
+                  <img className="card__image" src={VerIcon} alt="" />
+                </div>
+                <div className="card__content">
+                  <h1 className="card__title">First version of this website</h1>
+                  <p className="card__description">
+                    For my school project, I created my first website using
+                    Bootstrap and added my personal touch with custom styles. It
+                    ignited my passion for web development and marked the
+                    beginning of an exciting journey in this field.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Parallax>
+          <div className="space space--small"></div>
+          <Parallax y={[-20, 20]}>
+            <div className="card" data-index="0">
+              <div className="card__inner">
+                <div className="card__image-container">
+                  <img className="card__image" src={ColaIcon} alt="" />
+                </div>
+                <div className="card__content">
+                  <h1 className="card__title">Cola homepage</h1>
+                  <p className="card__description">
+                    My created website for our FiveM server offers a better way
+                    to access server information, contact us, and join our
+                    Discord community, while emphasizing that "Cola tastes
+                    better." It serves as an informative and engaging platform
+                    for our gaming community.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Parallax>
+          <div className="space space--small"></div>
+          <Parallax y={[-20, 20]}>
+            <div className="card" data-index="0">
+              <div className="card__inner">
+                <div className="card__image-container">
+                  <img className="card__image" src={PokemonIcon} alt="" />
+                </div>
+                <div className="card__content">
+                  <h1 className="card__title">Js-Pokemon game</h1>
+                  <p className="card__description">
+                    For my school project, I developed a Pokemon battle game in
+                    JavaScript that can be played in the console. The intriguing
+                    aspect of this project is the existence of multiple
+                    development versions and even a graphical user interface,
+                    offering diverse perspectives for an engaging gaming
+                    experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Parallax>
         </div>
-      ))}
-    </main>
+        <div className="space"></div>
+      </div>
+    </ParallaxProvider>
   );
 };
 
-export default CardComponent;
+export default Project;

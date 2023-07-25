@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 // Install the Styles
 import "./sass/App.scss";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS import
@@ -15,6 +16,8 @@ import Projects from "./components/Projects";
 
 // import images
 import waveSvg from "./assets/svg/wave.svg";
+
+
 
 //App Function
 function App() {
