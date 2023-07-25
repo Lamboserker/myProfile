@@ -1,9 +1,13 @@
 
+.z{
+  z-index: 113;
+}
 .card {
   position: sticky;
   top: 0;
   background-color: transparent;
   border: none;
+ 
   
 }
 

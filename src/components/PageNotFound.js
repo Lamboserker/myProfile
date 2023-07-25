@@ -5,7 +5,7 @@ import NotFound from "../assets/notFound.png";
 const PageNotFound = () => {
   return (
     <div className="notFound">
-      <h1>Page Not Found</h1>
+      <div title="Page Not Found" className="div">Page Not Found</div>
       <img src={NotFound} alt="Page Not Found" />
     </div>
   );

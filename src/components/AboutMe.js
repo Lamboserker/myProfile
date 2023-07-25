@@ -122,95 +122,62 @@ const AboutMe = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
-
-  const sectionTitleVariants = {
-    hidden: {
-      opacity: 0,
-      y: "-100%", // Move the heading above the viewport initially
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring", // You can customize the type of transition
-        damping: 20, // Adjust damping to control the "stamping" effect
-        stiffness: 300, // Adjust stiffness for the bounce effect
-      },
-    },
-  };
-
-  const iconVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.5,
-      x: "-100%",
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      x: 0,
-    },
-  };
-
-  useEffect(() => {
-    // Trigger the animation for the first heading on page load
-    const firstSectionRef = sections[0].ref.current;
-    if (firstSectionRef) {
-      const animateFirstHeading = () => {
-        firstSectionRef.style.visibility = "visible";
-        firstSectionRef.style.opacity = 1;
-        firstSectionRef.style.transition = "opacity 1s, transform 1s";
-        firstSectionRef.style.transform = "translateY(0)";
-      };
-      animateFirstHeading();
-    }
-  });
-
+  }, []);
   return (
     <div className="about-me-container">
-      {sections.map((section, index) => (
-        <div
-          key={index}
-          ref={section.ref}
-          className={`section-container ${
-            activeSection === index ? "active" : ""
-          }`}
-        >
+      <motion.div className="wrapper">
+        {sections.map((section, index) => (
           <motion.div
-            className="section-title"
-            initial="hidden"
-            animate={activeSection === index ? "visible" : "hidden"}
-            variants={sectionTitleVariants}
+            key={index}
+            ref={section.ref}
+            className={`section-container ${
+              activeSection === index ? "active" : ""
+            }`}
           >
-            <h2>{section.title}</h2>
-          </motion.div>
+            <motion.div
+              className="section-title"
+              initial={{ opacity: 0, y: "-100%" }}
+              animate={
+                activeSection === index ? { opacity: 1, y: 0 } : { opacity: 0 }
+              }
+              transition={{ type: "spring", damping: 20, stiffness: 300 }}
+            >
+              <h2>{section.title}</h2>
+            </motion.div>
 
-          <div className="section-content">
-            {section.icon && (
-              <motion.img
-                src={section.icon}
-                alt={`${section.title} Icon`}
-                className="section-icon"
-                initial="hidden"
-                animate={activeSection === index ? "visible" : "hidden"}
-                variants={iconVariants}
-              />
-            )}
-            {section.text && (
-              <motion.p
-                className="section-text"
-                initial="hidden"
-                animate={activeSection === index ? "visible" : "hidden"}
-                variants={sectionTitleVariants}
-              >
-                {section.text}
-              </motion.p>
-            )}
-          </div>
-        </div>
-      ))}
-      <IconTable sections={sections.slice(1)} />
+            <div className="section-content">
+              {section.icon && (
+                <motion.img
+                  src={section.icon}
+                  alt={`${section.title} Icon`}
+                  className="section-icon"
+                  initial={{ opacity: 0, scale: 0.5, x: "-100%" }}
+                  animate={
+                    activeSection === index
+                      ? { opacity: 1, scale: 1, x: 0 }
+                      : { opacity: 0 }
+                  }
+                  transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                />
+              )}
+              {section.text && (
+                <motion.p
+                  className="section-text"
+                  initial={{ opacity: 0, y: "-100%" }}
+                  animate={
+                    activeSection === index
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0 }
+                  }
+                  transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                >
+                  {section.text}
+                </motion.p>
+              )}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };

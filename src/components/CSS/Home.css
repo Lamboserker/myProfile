@@ -15,6 +15,7 @@
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
+  
 }
 
 .highlighted-text {
@@ -24,6 +25,7 @@
   color: transparent;
   font-weight: bold;
   font-size: 3rem;
+  color: white !important;
 }
 
 .typed-cursor {

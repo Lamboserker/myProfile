@@ -19,7 +19,6 @@ const Project = () => {
       if (index === cards.length - 1) {
         return;
       }
-      const toScale = 1 - (cards.length - 1 - index) * 0.1;
       const nextCard = cards[index + 1];
       const cardInner = card.querySelector('.card__inner');
       cardInner.style.transition = 'transform 0.3s, filter 0.3s';
@@ -40,7 +39,8 @@ const Project = () => {
   }, []);
   return (
     <ParallaxProvider>
-      <div>
+      <div className="z">
+        <div>
         <div className="space space--small"></div>
         <div className="cards">
           <Parallax y={[-20, 20]}>
@@ -104,6 +104,7 @@ const Project = () => {
           </Parallax>
         </div>
         <div className="space"></div>
+      </div>
       </div>
     </ParallaxProvider>
   );

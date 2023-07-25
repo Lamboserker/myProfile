@@ -1,9 +1,9 @@
+/* navbar.css */
 nav {
   margin-top: 20px;
-
   margin-bottom: 130px;
-  background-color: black;
   padding: 10px;
+  z-index: 999;
 }
 
 ul {
@@ -19,17 +19,29 @@ li {
 }
 
 li a {
-  color: white;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 5px;
 }
 
-li a:hover {
-  background-color: #8982f3;
-  color: black;
+/* Apply the hover effect only to the text in mobile view */
+@media screen and (min-width: 992px) {
+  li a{
+    color: white !important ;
+  }
+  li a:hover {
+    background-color: #8982f3;
+    color: black !important;
+  }
 }
+
+
+
 
 #navbarNav {
   justify-content: center;
 }
+
+
+
+

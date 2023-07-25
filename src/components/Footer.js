@@ -44,6 +44,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon
                     icon={faFacebookF}
+                    color="white"
                     size="2x"
                     className={`icon ${hoveredIcon === "faFacebookF" ? "hide" : ""}`}
                   />
@@ -65,6 +66,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon
                     icon={faTwitter}
+                    color="white"
                     size="2x"
                     className={`icon ${hoveredIcon === "faTwitter" ? "hide" : ""}`}
                   />
@@ -86,6 +88,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon
                     icon={faInstagram}
+                    color="white"
                     size="2x"
                     className={`icon ${hoveredIcon === "faInstagram" ? "hide" : ""}`}
                   />
@@ -107,6 +110,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon
                     icon={faLinkedinIn}
+                    color="white"
                     size="2x"
                     className={`icon ${hoveredIcon === "faLinkedinIn" ? "hide" : ""}`}
                   />
@@ -127,6 +131,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon
                     icon={faGithub}
+                    color="white"
                     size="2x"
                     className={`icon ${hoveredIcon === "faGithub" ? "hide" : ""}`}
                   />
