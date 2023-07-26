@@ -178,6 +178,7 @@ const AboutMe = () => {
           </motion.div>
         ))}
       </motion.div>
+      <IconTable sections={sections} />
     </div>
   );
 };

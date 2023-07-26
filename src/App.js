@@ -63,6 +63,7 @@ function App() {
       </BrowserRouter>
       <Footer />
       <img src={waveSvg} alt="Waveform" className="wave" />
+    
     </div>
   );
 }
