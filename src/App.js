@@ -11,11 +11,11 @@ import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
-import Footer from "./components/Footer";
+import SVGWithFooter from "./components/SVGWithFoter";
 import Projects from "./components/Projects";
 
 // import images
-import waveSvg from "./assets/svg/wave.svg";
+
 
 
 
@@ -61,9 +61,9 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <Footer />
-      <img src={waveSvg} alt="Waveform" className="wave" />
-    
+      
+     
+      <SVGWithFooter />
     </div>
   );
 }

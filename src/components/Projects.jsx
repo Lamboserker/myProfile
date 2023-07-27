@@ -1,113 +1,103 @@
-import React, { useEffect } from "react";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
-
+import React from "https://cdn.skypack.dev/react@17.0.1";
+import Footer from "./Footer";
 import "./CSS/Projects.css";
+import Github from "../assets/github/github-mark-white.png";
 
-//import images
-import VerIcon from "../assets/IMG_7060.jpg";
-import ColaIcon from "../assets/1.png";
-import PokemonIcon from "../assets/pokemon.jpg";
-const Project = () => {
-  useEffect(() => {
-    const cardsContainer = document.querySelector('.cards');
-    const cards = document.querySelectorAll('.card');
-    cardsContainer.style.setProperty('--cards-count', cards.length);
-    cardsContainer.style.setProperty('--card-height', `${cards[0].clientHeight}px`);
-    Array.from(cards).forEach((card, index) => {
-      const offsetTop = 20 + index * 20;
-      card.style.paddingTop = `${offsetTop}px`;
-      if (index === cards.length - 1) {
-        return;
-      }
-      const nextCard = cards[index + 1];
-      const cardInner = card.querySelector('.card__inner');
-      cardInner.style.transition = 'transform 0.3s, filter 0.3s';
-
-      const handleScroll = () => {
-        const { top, height } = nextCard.getBoundingClientRect();
-        const percentageY = Math.max(0, Math.min(1, (window.innerHeight - top) / height));
-        cardInner.style.transform = `scale(${1 - percentageY * 0.1})`;
-        cardInner.style.filter = `brightness(${1 - percentageY * 0.4})`;
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    });
-  }, []);
+// Write code here
+function Projects() {
   return (
-    <ParallaxProvider>
-      <div className="z">
-        <div>
-        <div className="space space--small"></div>
-        <div className="cards">
-          <Parallax y={[-20, 20]}>
-            <div className="card" data-index="0">
-              <div className="card__inner">
-                <div className="card__image-container">
-                  <img className="card__image" src={VerIcon} alt="" />
-                </div>
-                <div className="card__content">
-                  <h1 className="card__title">First version of this website</h1>
-                  <p className="card__description">
-                    For my school project, I created my first website using
-                    Bootstrap and added my personal touch with custom styles. It
-                    ignited my passion for web development and marked the
-                    beginning of an exciting journey in this field.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Parallax>
-          <div className="space space--small"></div>
-          <Parallax y={[-20, 20]}>
-            <div className="card" data-index="0">
-              <div className="card__inner">
-                <div className="card__image-container">
-                  <img className="card__image" src={ColaIcon} alt="" />
-                </div>
-                <div className="card__content">
-                  <h1 className="card__title">Cola homepage</h1>
-                  <p className="card__description">
-                    My created website for our FiveM server offers a better way
-                    to access server information, contact us, and join our
-                    Discord community, while emphasizing that "Cola tastes
-                    better." It serves as an informative and engaging platform
-                    for our gaming community.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Parallax>
-          <div className="space space--small"></div>
-          <Parallax y={[-20, 20]}>
-            <div className="card" data-index="0">
-              <div className="card__inner">
-                <div className="card__image-container">
-                  <img className="card__image" src={PokemonIcon} alt="" />
-                </div>
-                <div className="card__content">
-                  <h1 className="card__title">Js-Pokemon game</h1>
-                  <p className="card__description">
-                    For my school project, I developed a Pokemon battle game in
-                    JavaScript that can be played in the console. The intriguing
-                    aspect of this project is the existence of multiple
-                    development versions and even a graphical user interface,
-                    offering diverse perspectives for an engaging gaming
-                    experience.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Parallax>
+    <div className="timeline-container">
+      <div className="entries">
+        <div className="entry first-version-entry">
+          <div className="title big">First version of this website</div>
+          <div className="body">
+            <p>
+              For my school project, I created my first website using Bootstrap
+              and added my personal touch with custom styles. It ignited my
+              passion for web development and marked the beginning of an
+              exciting journey in this field.
+            </p>
+          </div>
         </div>
-        <div className="space"></div>
+        <div className="entry github-entry">
+          <div className="title">Watch code</div>
+          <div className="body">
+            <p>
+              Visit GitHub to see the code.
+              <button className="btn">
+                <a
+                  href="https://github.com/Lamboserker/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className="icon" src={Github} alt="Github Icon" />
+                  <span className="text">visit github</span>
+                </a>
+              </button>
+            </p>
+          </div>
+        </div>
+        <div className="entry pokemon-entry">
+          <div className="title big">Pokemon Game</div>
+          <div className="body">
+            <p>
+              For my school project, I developed a Pokemon battle game in
+              JavaScript that can be played in the console. The intriguing
+              aspect of this project is the existence of multiple development
+              versions and even a graphical user interface, offering diverse
+              perspectives for an engaging gaming experience.
+            </p>
+          </div>
+        </div>
+        <div className="entry github-entry">
+          <div className="title">Watch code</div>
+          <div className="body">
+          <p>
+              Visit GitHub to see the code.
+              <button className="btn">
+                <a
+                  href="https://github.com/Lamboserker/pb-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className="icon" src={Github} alt="Github Icon" />
+                  <span className="text">visit github</span>
+                </a>
+              </button>
+            </p>
+          </div>
+        </div>
+        <div className="entry cola-entry">
+          <div className="title big">Cola Homepage</div>
+          <div className="body">
+            <p>
+              My created website for our FiveM server offers a better way to
+              access server information, contact us, and join our Discord
+              community, while emphasizing that "Cola tastes better." It serves
+              as an informative and engaging platform for our gaming community.
+            </p>
+          </div>
+        </div>
+        <div className="entry github-entry">
+          <div className="title">Watch code</div>
+          <div className="body">
+          <p>
+              Visit GitHub to see the code.
+              <button className="btn">
+                <a
+                  href="https://github.com/Lamboserker/COLA_HOMEPAGE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className="icon" src={Github} alt="Github Icon" />
+                  <span className="text">visit github</span>
+                </a>
+              </button>
+            </p>
+          </div>
+        </div>
       </div>
-      </div>
-    </ParallaxProvider>
+    </div>
   );
-};
-
-export default Project;
+}
+export default Projects;

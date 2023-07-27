@@ -1,23 +1,31 @@
 
-main {
-  margin-bottom: 10em;
-}
+
 .footer-position {
- width: 100%;
   position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
-  background-color: transparent;
-
- 
+  height: 50px;
 }
 
 
-a:hover{
-text-decoration: none!important;
+.icon-container {
+  
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: scale(1.2); /* Vergrößern Sie das Icon beim Schweben */
+}
+
+a:hover {
+  text-decoration: none !important;
 }
 
 .icon-text {
+  
   padding: 13px;
   color: white !important;
 }

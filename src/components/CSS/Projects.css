@@ -1,99 +1,157 @@
-
-.z{
-  z-index: 113;
-}
-.card {
-  position: sticky;
-  top: 0;
+.timeline-container {
   background-color: transparent;
+  min-height: calc(100vh - 100px); /* Abstand nach unten (100px) für den Footer */
+  margin: 0;
+  font-family: "Droid Sans", sans-serif;
+  padding-bottom: 20px; /* Füge einen zusätzlichen Abstand nach unten hinzu */
+}
+
+.timeline-container:before {
+  content: "";
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: #fff;
+}
+
+.timeline-container .entries {
+  width: calc(100% - 80px);
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  left: -5px;
+}
+.timeline-container .entries .entry {
+  width: calc(50% - 80px);
+  float: left;
+  padding: 20px;
+  clear: both;
+  text-align: right;
+  cursor: pointer; /* Add cursor pointer on hover */
+  transition: color 0.3s, background-color 0.3s; /* Add transition effect for color and background changes */
+}
+
+.timeline-container .entries .entry:not(:first-child) {
+  margin-top: -60px;
+}
+
+.timeline-container .entries .entry .title {
+  font-size: 32px;
+  margin-bottom: 12px;
+  position: relative;
+  color: #fff;
+}
+
+.timeline-container .entries .entry .title:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 4px solid #ffffff;
+  background-color: #1D1D1D;
+  border-radius: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -73px;
+  z-index: 1000;
+}
+
+.timeline-container .entries .entry .title.big:before {
+  width: 24px;
+  height: 24px;
+  transform: translate(8px, -50%);
+}
+
+.timeline-container .entries .entry .body {
+  color: #aaa;
+}
+
+.timeline-container .entries .entry .body p {
+  line-height: 1.4em;
+}
+
+.timeline-container .entries .entry:nth-child(2n) {
+  text-align: left;
+  float: right;
+}
+
+.timeline-container .entries .entry:nth-child(2n) .title:before {
+  left: -63px;
+}
+
+.timeline-container .entries .entry:nth-child(2n) .title.big:before {
+  transform: translate(-8px, -50%);
+}
+
+button {
   border: none;
- 
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the icon */
+.icon {
+  width: 24px; /* Adjust the size of the icon as needed */
+  height: 24px;
+  margin-right: 8px; /* Add some space between icon and text */
+}
+
+/* Styling for the button text */
+.text {
+  font-size: 16px;
+  color: #ffffff; /* Set the text color */
+}
+
+/* Apply the hover effect */
+.timeline-container .entries .entry:hover {
+  color: #ffffff; /* Set the text color to white on hover */
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+}
+
+/* Add the background images to the respective entry classes */
+.first-version-entry {
+  border-radius: 10px;
+  background-image: url("../../assets/IMG_7060.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.first-version-entry:hover{
+  
+  background-image: url("../../assets/IMG_7060.jpg");
+  background-size: cover;
+  background-position: center;
   
 }
-
-.card__inner {
-  will-change: transform;
-  background: rgb(255, 255, 255);
-  border-radius: 14px;
-  display: flex;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px hsla(265.3, 20%, 10%, 35%);
-  transform-origin: center top;
-  box-shadow: 0px 30px 100px rgba(255, 255, 255, 0.1);
+.pokemon-entry {
+  border-radius: 10px;
+  background-image: url("../../assets/pokemon.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.cards {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-rows: repeat(var(--cards-count), var(--card-height));
-  gap: 40px 0;
+.cola-entry {
+  border-radius: 10px;
+  background-image: url("../../assets/1.png");
+  background-size: cover;
+  background-position: center;
 }
 
-.card__image-container {
-  display: flex;
-  width: 40%;
-  flex-shrink: 0;
+
+.timeline-container .entries .entry:hover {
+  color: #ffffff; /* Set the text color to white on hover */
+  color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(33px);
+  background-blend-mode: overlay;
 }
 
-.card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 1;
-}
-
-.card__content {
-  padding: 40px 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card__title {
-  padding: 0;
-  margin: 0;
-  font-size: 60px;
-  font-weight: 600;
-  color: #16263a;
-}
-
-.card__description {
-  line-height: 1.4;
-  font-size: 24px;
-  color: #16263a;
-}
-
-.space {
-  height: 90vh;
-}
-
-.space--small {
-  height: 40vh;
-}
-
-@media (max-width: 600px) {
-  .card__inner {
-    flex-direction: column;
-  }
-
-  .card__image-container {
-    width: 100%;
-  }
-
-  .card__image {
-    aspect-ratio: 16 / 9;
-  }
-
-  .card__title {
-    font-size: 32px;
-  }
-
-  .card__description {
-    font-size: 16px;
-  }
-
-  .card__content {
-    padding: 30px 20px;
-  }
+/* Change the color of the text on hover */
+.timeline-container .entries .entry:hover .body p {
+  color: #ffffff; /* Set the text color to white on hover */
 }
