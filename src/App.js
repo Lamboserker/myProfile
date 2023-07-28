@@ -23,6 +23,7 @@ import Projects from "./components/Projects";
 function App() {
   return (
     <div className="App">
+      
       <div className="background">
         <span></span>
         <span></span>
@@ -63,7 +64,7 @@ function App() {
       </BrowserRouter>
       
      
-      <SVGWithFooter />
+      <SVGWithFooter className="footer" />
     </div>
   );
 }

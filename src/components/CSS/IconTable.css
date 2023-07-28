@@ -3,6 +3,9 @@
   display: flex;
   overflow: hidden;
   margin-bottom: 20em;
+  border-radius: 10px ;
+  backdrop-filter: blur(40px);
+  
 }
 
 .icon-scroll-container {

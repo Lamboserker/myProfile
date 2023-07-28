@@ -4,7 +4,7 @@
 
 .notFound {
   width: 100vw;
-  height: 100vh;
+  height: 57vh;
   font-size: 96px;
   font-family: 'Fira Mono', monospace;
   letter-spacing: -7px;
@@ -20,6 +20,7 @@
 
  h1 {
   text-align: center;
+  position: fixed;
 }
 
 .notFound img {

@@ -1,23 +1,21 @@
-
-
+/* Footer CSS */
 .footer-position {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  height: 50px;
+  height: 30px; /* Set a fixed height for the footer */
+  background-color: transparent; /* Add a background color for better visibility */
 }
 
-
 .icon-container {
-  
   padding: 10px;
   transition: transform 0.3s ease;
 }
 
 .icon-container:hover {
-  transform: scale(1.2); /* Vergrößern Sie das Icon beim Schweben */
+  transform: scale(1.2);
 }
 
 a:hover {
@@ -25,7 +23,47 @@ a:hover {
 }
 
 .icon-text {
-  
-  padding: 13px;
+  padding: 8px; /* Adjust padding for the icon text */
   color: white !important;
+}
+
+/* Add media queries for responsive design */
+@media (max-width: 768px) {
+
+  .footer-container {
+    position:fixed !important;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: 30px; /* Set a fixed height for the footer */
+    background-color: transparent; /* Add a background color for better visibility */
+  /* Modify the icon size and padding for small screens */
+  .icon-container {
+    padding: 5px;
+    
+  }
+
+  .icon-text {
+    padding: 5px;
+  }
+
+  .footer-position {
+    height: 70px; /* Increase height to accommodate icons in mobile view */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+}
+
+
+
+
+
+
+@media (max-width: 700px) {
+
+}
 }

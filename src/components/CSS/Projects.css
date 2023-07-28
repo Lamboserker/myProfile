@@ -96,11 +96,19 @@ button {
   align-items: center;
 }
 
+.btn button:hover{
+  color: gray;
+}
+
 /* Styling for the icon */
 .icon {
   width: 24px; /* Adjust the size of the icon as needed */
   height: 24px;
   margin-right: 8px; /* Add some space between icon and text */
+}
+
+.icon:active{
+  content: url(../../assets//github/github-mark.png);
 }
 
 /* Styling for the button text */
