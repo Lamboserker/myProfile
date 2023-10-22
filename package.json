@@ -2,7 +2,7 @@
   "homepage": "https://lamboserker.github.io/myProfile",
   "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@coreui/react": "^5.0.0-alpha.0",
     "@formspree/react": "^2.4.4",
