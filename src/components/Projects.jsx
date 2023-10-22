@@ -1,5 +1,3 @@
-import React from "https://cdn.skypack.dev/react@17.0.1";
-import Footer from "./Footer";
 import "./CSS/Projects.css";
 import Github from "../assets/github/github-mark-white.png";
 

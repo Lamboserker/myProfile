@@ -126,13 +126,13 @@ button {
 /* Add the background images to the respective entry classes */
 .first-version-entry {
   border-radius: 10px;
-  background-image: url("../../assets/IMG_7060.jpg");
+  background-image: url("../../assets/IMG_7060.JPG");
   background-size: cover;
   background-position: center;
 }
 .first-version-entry:hover{
   
-  background-image: url("../../assets/IMG_7060.jpg");
+  background-image: url("../../assets/IMG_7060.JPG");
   background-size: cover;
   background-position: center;
   

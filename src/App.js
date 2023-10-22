@@ -14,10 +14,6 @@ import PageNotFound from "./components/PageNotFound";
 import SVGWithFooter from "./components/SVGWithFoter";
 import Projects from "./components/Projects";
 
-// import images
-
-
-
 
 //App Function
 function App() {
