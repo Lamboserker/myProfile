@@ -12,14 +12,12 @@ import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import SVGWithFooter from "./components/SVGWithFoter";
-import Projects from "./components/Projects";
-
+import Projects from "./components/Projects/Projects";
 
 //App Function
 function App() {
   return (
     <div className="App">
-      
       <div className="background">
         <span></span>
         <span></span>
@@ -58,8 +56,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      
-     
+
       <SVGWithFooter className="footer" />
     </div>
   );

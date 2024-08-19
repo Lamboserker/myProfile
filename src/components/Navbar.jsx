@@ -9,8 +9,7 @@ const Parent = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-      
+      <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top mt-0 ">
         <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
           <span className="navbar-toggler-icon"></span>
         </button>

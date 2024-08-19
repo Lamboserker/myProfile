@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import "../components/CSS/AboutMe.css";
 import IconTable from "./IconTable";
 
-//Import the Icons
+// Import the Icons
 import JsIcon from "../assets/icons/JS.png";
 import HTMLIcon from "../assets/icons/HTML5.png";
 import NodeJsIcon from "../assets/icons/nodejs-logo.png";
@@ -16,25 +16,20 @@ import CSS3Icon from "../assets/icons/CSS3.png";
 import SQLIcon from "../assets/icons/SQL.png";
 import PHPIcon from "../assets/icons/PHP.png";
 
-//Export Function
+// Export Function
 const AboutMe = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const [scrollTimeout, setScrollTimeout] = useState(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const sections = [
-    {
-      title: "My Skills",
-      icon: null,
-      text: null,
-      ref: useRef(null),
-    },
-    // Programming Languages
+    { title: "My Skills", icon: null, text: null, ref: useRef(null) },
     {
       title: "JavaScript",
       icon: JsIcon,
       text: "JavaScript and I go together like peanut butter and jelly, always cooking up interactivity.",
       ref: useRef(null),
     },
-    // Web Technologies
     {
       title: "HTML5",
       icon: HTMLIcon,
@@ -47,11 +42,10 @@ const AboutMe = () => {
       text: "CSS3 and I have an unspoken understanding – it always styles, and I never break!",
       ref: useRef(null),
     },
-
     {
       title: "React",
       icon: ReactIcon,
-      text: "React is the magic wand in my coder`s toolkit, turning complex UIs into works of art.",
+      text: "React is the magic wand in my coder's toolkit, turning complex UIs into works of art.",
       ref: useRef(null),
     },
     {
@@ -63,17 +57,15 @@ const AboutMe = () => {
     {
       title: "Sass",
       icon: SassIcon,
-      text: "When Sass is around, my CSS feels like it`s dressed in designer clothes.",
+      text: "When Sass is around, my CSS feels like it's dressed in designer clothes.",
       ref: useRef(null),
     },
-    // Backend Technologies
     {
       title: "NodeJS",
       icon: NodeJsIcon,
       text: "Node.js swoops into action like the Avengers, assembling a team of powerful packages to save your web applications from sluggishness and deliver superhero-level performance!",
       ref: useRef(null),
     },
-
     {
       title: "SQL",
       icon: SQLIcon,
@@ -86,14 +78,12 @@ const AboutMe = () => {
       text: "PHP and I are like a dynamic duo, scripting server-side wonders.",
       ref: useRef(null),
     },
-    //Package Manager Control
     {
       title: "npm",
       icon: npmIcon,
       text: "npm is my trusty genie, granting my wishes for packages with a simple command.",
       ref: useRef(null),
     },
-
     {
       title: "GIT",
       icon: GITIcon,
@@ -104,25 +94,55 @@ const AboutMe = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isScrolling) return;
+
+      setIsScrolling(true);
+
       const viewportHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
 
       let activeIndex = 0;
       for (let i = 1; i < sections.length; i++) {
         const sectionOffset = sections[i].ref.current.offsetTop;
-        if (scrollPosition >= sectionOffset - viewportHeight * 0.2) {
+        if (scrollPosition >= sectionOffset - viewportHeight * 0.4) {
+          // Trigger earlier
           activeIndex = i;
         }
       }
-      setActiveSection(activeIndex);
+
+      // Only update the active section if it's within the section bounds
+      if (activeIndex < sections.length) {
+        setActiveSection(activeIndex);
+      }
+
+      setScrollTimeout(
+        setTimeout(() => {
+          setIsScrolling(false);
+        }, 500) // Debounce time to control scroll speed
+      );
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [isScrolling, scrollTimeout]);
+
+  useEffect(() => {
+    const scrollToSection = () => {
+      if (activeSection < sections.length - 1) {
+        sections[activeSection].ref.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    scrollToSection();
+  }, [activeSection, sections]);
+
   return (
     <div className="about-me-container">
       <motion.div className="wrapper">

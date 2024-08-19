@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className="container text-center">
+      <div className="container text-center" style={{ marginTop: "100px" }}>
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="animated-text-container">
