@@ -1,22 +1,39 @@
-
-.img {
-  width: 500px;
-  height: 500px !important;
-  border: 2px solid #fff;
-  background: url(../../assets/IMG_7060.JPG) no-repeat;
-  -moz-box-shadow: 10px 10px 5px #ccc;
-  -webkit-box-shadow: 10px 10px 5px #ccc;
-  box-shadow: 10px 10px 5px #ccc;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
+/* Container for aligning text and image */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Ensure items wrap to the next line if needed */
+  gap: 20px; /* Adds space between the text and image */
 }
 
 .animated-text-container {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
-  
+  flex: 1; /* Allows the text container to grow */
+  min-width: 0; /* Allows the container to shrink if needed */
+  box-sizing: border-box; /* Includes padding and border in the width calculation */
+}
+
+.img-container {
+  flex: 1; /* Allows the image container to grow */
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 100%; /* Make sure the image fits within its container */
+  max-width: 500px; /* Restrict maximum width */
+  height: 500px; /* Maintain aspect ratio */
+  border: 2px solid #fff;
+  background: url(../../assets/IMG_7060.JPG) no-repeat center center;
+  background-size: cover;
+  box-shadow: 10px 10px 5px #ccc;
+  border-radius: 25px;
+}
+
+/* Ensure the text container handles text wrapping */
+.animated-text-container h1 {
+  margin: 0;
 }
 
 .highlighted-text {
@@ -26,7 +43,20 @@
   color: transparent;
   font-weight: bold;
   font-size: 3rem;
-  color: white !important;
+}
+
+.highlighted-text.text-black {
+  color: black !important; /* Ensure it overrides other styles */
+  background: none; /* Remove gradient background */
+}
+
+.highlighted-text.text-gradient {
+  background: linear-gradient(to right, #4a4d75, #5d5c8e, #a5a5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 .typed-cursor {

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./sass/App.scss";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS import
 import "./components/CSS/Background.css";
+import "./components/CSS/Footer.css";
 
 // Import components
 import Navbar from "./components/Navbar";
@@ -44,7 +45,6 @@ function App() {
         <span></span>
         <span></span>
       </div>
-      {/*The Router of my Page */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />}>
@@ -57,7 +57,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <SVGWithFooter className="footer" />
+      <SVGWithFooter />
     </div>
   );
 }

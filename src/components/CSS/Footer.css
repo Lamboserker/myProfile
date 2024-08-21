@@ -1,14 +1,31 @@
-/* Footer CSS */
 .footer-position {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
-  height: 30px; /* Set a fixed height for the footer */
-  background-color: transparent; /* Add a background color for better visibility */
+  z-index: 10000; /* Sehr hoher z-index für den Vordergrund */
+  height: 50px; /* Feste Höhe für den Footer */
+  background-color: transparent; /* Hintergrundfarbe für bessere Sichtbarkeit */
 }
 
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: transparent;
+}
+
+/* Footer styles */
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Icon container styles */
 .icon-container {
   padding: 10px;
   transition: transform 0.3s ease;
@@ -18,52 +35,28 @@
   transform: scale(1.2);
 }
 
+/* Icon text styles */
+.icon-text {
+  padding: 8px;
+  color: white;
+}
+
 a:hover {
   text-decoration: none !important;
 }
 
-.icon-text {
-  padding: 8px; /* Adjust padding for the icon text */
-  color: white !important;
-}
-
 /* Add media queries for responsive design */
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
-
   .footer-container {
-    position:fixed !important;
-    bottom: 70px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    height: 30px; /* Set a fixed height for the footer */
-    background-color: transparent; /* Add a background color for better visibility */
-  /* Modify the icon size and padding for small screens */
+    height: 70px; /* Adjusted height for mobile */
+  }
+
   .icon-container {
     padding: 5px;
-    
   }
 
   .icon-text {
     padding: 5px;
   }
-
-  .footer-position {
-    height: 70px; /* Increase height to accommodate icons in mobile view */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
- 
-}
-
-
-
-
-
-
-@media (max-width: 700px) {
-
-}
 }

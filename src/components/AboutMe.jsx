@@ -9,13 +9,14 @@ import HTMLIcon from "../assets/icons/HTML5.png";
 import NodeJsIcon from "../assets/icons/nodejs-logo.png";
 import npmIcon from "../assets/icons/npm.png";
 import ReactIcon from "../assets/icons/react.png";
-import GITIcon from "../assets/icons/Git.png";
+import GITIcon from "../assets/icons/git.png";
 import BootstrapIcon from "../assets/icons/bootstrap.png";
 import SassIcon from "../assets/icons/sass.png";
 import CSS3Icon from "../assets/icons/CSS3.png";
-import SQLIcon from "../assets/icons/SQL.png";
-import PHPIcon from "../assets/icons/PHP.png";
-
+import TailwindIcon from "../assets/icons/tailwind.png"; // Beispiel für den korrekten Pfad
+import VueIcon from "../assets/icons/vue.png";
+import PythonIcon from "../assets/icons/python.png";
+import TypeScriptIcon from "../assets/icons/typescript.png";
 // Export Function
 const AboutMe = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -28,6 +29,18 @@ const AboutMe = () => {
       title: "JavaScript",
       icon: JsIcon,
       text: "JavaScript and I go together like peanut butter and jelly, always cooking up interactivity.",
+      ref: useRef(null),
+    },
+    {
+      title: "TypeScript",
+      icon: TypeScriptIcon,
+      text: "TypeScript gives my JavaScript superpowers, making my code safer and more robust.",
+      ref: useRef(null),
+    },
+    {
+      title: "Python",
+      icon: PythonIcon,
+      text: "Python is my swiss army knife for data science, automation, and backend development.",
       ref: useRef(null),
     },
     {
@@ -49,9 +62,21 @@ const AboutMe = () => {
       ref: useRef(null),
     },
     {
+      title: "Vue",
+      icon: VueIcon,
+      text: "Vue is my go-to framework when I want to build lightning-fast and reactive applications effortlessly.",
+      ref: useRef(null),
+    },
+    {
       title: "Bootstrap",
       icon: BootstrapIcon,
       text: "Bootstrap is my web development wingman, making responsive layouts a breeze.",
+      ref: useRef(null),
+    },
+    {
+      title: "Tailwind",
+      icon: TailwindIcon,
+      text: "With Tailwind, I can craft beautiful, responsive designs straight from the utility class heavens.",
       ref: useRef(null),
     },
     {
@@ -67,15 +92,9 @@ const AboutMe = () => {
       ref: useRef(null),
     },
     {
-      title: "SQL",
-      icon: SQLIcon,
-      text: "SQL lets me dance with databases, and together, we tango through data like pros.",
-      ref: useRef(null),
-    },
-    {
-      title: "PHP",
-      icon: PHPIcon,
-      text: "PHP and I are like a dynamic duo, scripting server-side wonders.",
+      title: "nvm",
+      icon: npmIcon,
+      text: "nvm helps me manage my Node.js versions like a pro, ensuring my projects stay compatible.",
       ref: useRef(null),
     },
     {
