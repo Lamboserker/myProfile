@@ -1,31 +1,21 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 
 // Import the icons
 import RoundedIcon from "../assets/icons/alert.png";
 
 import "../components/CSS/Springmodal.css";
 
-const ExampleWrapper = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const ExampleWrapper = ({ isOpen, setIsOpen, sendStatus }) => {
   return (
-    <div className="px-4 py-64 bg-slate-900 grid place-content-center">
-      <button onClick={() => setIsOpen(true)} className="send">
-        Send Message
-      </button>
-      <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
-    </div>
+    <SpringModal
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
+      sendStatus={sendStatus}
+    />
   );
 };
 
-const SpringModal = ({ isOpen, setIsOpen, onSubmitForm }) => {
-  const handleFormSubmit = () => {
-    // Assuming you have the form data (firstName, lastName, and other fields)
-    // collected and ready to be submitted, pass it to the onSubmitForm function.
-    // onSubmitForm will handle the actual form submission to the server.
-    onSubmitForm();
-    setIsOpen(false); // Close the modal after submission (you may modify this as per your requirements).
-  };
+const SpringModal = ({ isOpen, setIsOpen, sendStatus }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -49,15 +39,22 @@ const SpringModal = ({ isOpen, setIsOpen, onSubmitForm }) => {
 
             <div className="relative z-10 padding-bottom margin">
               <h3 className="text-3xl font-bold text-center mb-2">
-                Everything entered correctly?
+                {sendStatus === "success"
+                  ? "Message sent successfully!"
+                  : sendStatus === "error"
+                  ? "Failed to send message."
+                  : "Sending message..."}
               </h3>
               <p className="text-center mb-6">
-                If you´re not sure, please go back and check it again. <br />
-                Or contact me via phone or mail.
+                {sendStatus === "success"
+                  ? "Your message has been sent. We will get back to you soon."
+                  : sendStatus === "error"
+                  ? "Please try again or contact us via phone or email."
+                  : "Please wait while we send your message..."}
               </p>
               <div className="info">
                 <p>
-                  Phone: <br /> +49 - 173 3044745{" "}
+                  Phone: <br /> +49 - 173 3044745
                 </p>
                 <p>
                   Email: <br /> lukaslamberz96@gmail.com
@@ -68,13 +65,7 @@ const SpringModal = ({ isOpen, setIsOpen, onSubmitForm }) => {
                   onClick={() => setIsOpen(false)}
                   className="purplebutton"
                 >
-                  Wait, I forgot something
-                </button>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="whitebutton" 
-                >
-                  Ready to send!
+                  Close
                 </button>
               </div>
             </div>

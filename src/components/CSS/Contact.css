@@ -118,3 +118,25 @@
 .show {
   opacity: 1;
 }
+
+.alert {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.alert.info {
+  background-color: #2196F3;
+  color: white;
+}
+
+.alert.success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.alert.error {
+  background-color: #f44336;
+  color: white;
+}

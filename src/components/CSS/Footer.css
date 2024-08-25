@@ -45,8 +45,6 @@ a:hover {
   text-decoration: none !important;
 }
 
-/* Add media queries for responsive design */
-/* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .footer-container {
     height: 70px; /* Adjusted height for mobile */
