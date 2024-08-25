@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "../components/CSS/IconTable.css";
+import "../CSS/IconTable.css";
 
 const IconTable = ({ sections }) => {
   // Duplicate the sections array to create a seamless loop
@@ -14,7 +14,11 @@ const IconTable = ({ sections }) => {
         transition={{ repeat: Infinity, duration: 10 }}
       >
         {duplicatedSections.map((section, index) => (
-          <motion.div key={index} className="icon-category" style={{ filter: "grayscale(100%)" }}>
+          <motion.div
+            key={index}
+            className="icon-category"
+            style={{ filter: "grayscale(100%)" }}
+          >
             {/* Bedingte Anzeige des Icons */}
             {section.icon && (
               <motion.img

@@ -9,10 +9,10 @@ import "./components/CSS/Footer.css";
 // Import components
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/Tech-Stack/AboutMe";
 import Contact from "./components/Contact";
-import PageNotFound from "./components/PageNotFound";
-import SVGWithFooter from "./components/SVGWithFoter";
+import PageNotFound from "./components/404/PageNotFound";
+import SVGWithFooter from "./components/Footer/SVGWithFoter";
 import Projects from "./components/Projects/Projects";
 
 //App Function

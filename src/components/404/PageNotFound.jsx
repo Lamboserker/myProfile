@@ -1,6 +1,6 @@
 import React from "react";
-import "../components/CSS/PageNotFound.css";
-import NotFound from "../assets/notFound.png";
+import "../CSS/PageNotFound.css";
+import NotFound from "../../assets/notFound.png";
 
 const PageNotFound = () => {
   return (

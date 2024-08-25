@@ -45,9 +45,11 @@ a:hover {
   text-decoration: none !important;
 }
 
+/* Mobile Footer */
 @media (max-width: 768px) {
   .footer-container {
-    height: 70px; /* Adjusted height for mobile */
+    height: 70px; /* Höhe für mobile Ansicht */
+    background-color: #333; /* Hintergrundfarbe für mobile Ansicht */
   }
 
   .icon-container {

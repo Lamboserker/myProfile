@@ -1,22 +1,22 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import "../components/CSS/AboutMe.css";
+import "../CSS/AboutMe.css";
 import IconTable from "./IconTable";
 
 // Import the Icons
-import JsIcon from "../assets/icons/JS.png";
-import HTMLIcon from "../assets/icons/HTML5.png";
-import NodeJsIcon from "../assets/icons/nodejs-logo.png";
-import npmIcon from "../assets/icons/npm.png";
-import ReactIcon from "../assets/icons/react.png";
-import GITIcon from "../assets/icons/git.png";
-import BootstrapIcon from "../assets/icons/bootstrap.png";
-import SassIcon from "../assets/icons/sass.png";
-import CSS3Icon from "../assets/icons/CSS3.png";
-import TailwindIcon from "../assets/icons/tailwind.png"; // Beispiel für den korrekten Pfad
-import VueIcon from "../assets/icons/vue.png";
-import PythonIcon from "../assets/icons/python.png";
-import TypeScriptIcon from "../assets/icons/typescript.png";
+import JsIcon from "../../assets/icons/JS.png";
+import HTMLIcon from "../../assets/icons/HTML5.png";
+import NodeJsIcon from "../../assets/icons/nodejs-logo.png";
+import npmIcon from "../../assets/icons/npm.png";
+import ReactIcon from "../../assets/icons/react.png";
+import GITIcon from "../../assets/icons/git.png";
+import BootstrapIcon from "../../assets/icons/bootstrap.png";
+import SassIcon from "../../assets/icons/sass.png";
+import CSS3Icon from "../../assets/icons/CSS3.png";
+import TailwindIcon from "../../assets/icons/tailwind.png"; // Beispiel für den korrekten Pfad
+import VueIcon from "../../assets/icons/vue.png";
+import PythonIcon from "../../assets/icons/python.png";
+import TypeScriptIcon from "../../assets/icons/typescript.png";
 // Export Function
 const AboutMe = () => {
   const [activeSection, setActiveSection] = useState(0);
