@@ -26,7 +26,7 @@ function Projects() {
                     {project.image && !project.cssClass && (
                       <img className="icon" src={project.image} alt="GitHub" />
                     )}
-                    <span className="text">visit github</span>
+                    
                   </a>
                 </button>
               )}

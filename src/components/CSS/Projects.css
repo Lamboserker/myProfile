@@ -1,7 +1,10 @@
+
+
 .timeline-container {
   background-color: transparent;
   min-height: calc(100vh - 100px); /* Abstand nach unten (100px) für den Footer */
-  margin: 0;
+  margin-top: 100px;
+  margin-bottom:2000px;
   font-family: "Droid Sans", sans-serif;
   padding-bottom: 20px; /* Füge einen zusätzlichen Abstand nach unten hinzu */
 }
@@ -151,6 +154,43 @@ button {
   background-position: center;
 }
 
+.pixpulse-entry {
+  border-radius: 10px;
+  background-image: url("../../assets/68747470733a2f2f692e696d6775722e636f6d2f3234655872516c2e706e67.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.pixpulse-entry:hover{
+  background-image: url("../../assets/68747470733a2f2f692e696d6775722e636f6d2f3234655872516c2e706e67.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.claims-entry{
+  border-radius: 10px;
+
+  background-size: contain;
+  background-position: center;
+}
+
+.claims-entry:hover{
+  background-size: contain;
+  background-position: center;
+}
+
+.webdesk-entry{
+
+  border-radius: 10px;
+  background-image: url("../../assets/Screenshot\ 2024-07-22\ 203630.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.webdesk-entry:hover{
+  background-size: contain;
+  background-position: center;
+}
 
 .timeline-container .entries .entry:hover {
   color: #ffffff; /* Set the text color to white on hover */

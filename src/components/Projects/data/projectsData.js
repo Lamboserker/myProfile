@@ -1,7 +1,4 @@
 import Github from "../../../assets/github/github-mark-white.png";
-// import FirstVersionImage from "../../../assets/IMG_7060.JPG";
-// import PokemonImage from "../../../assets/pokemon.jpg";
-// import ColaImage from "../../../assets/1.png";
 
 export const projects = [
   {
@@ -52,4 +49,54 @@ export const projects = [
     isBigTitle: false,
     image: Github,
   },
+  {
+    title: "PixPulse",
+    description:
+      "PixPulse is a cutting-edge web application designed for downloading high-quality pictures for free. With a user-friendly interface and seamless integration with the Unsplash API, PixPulse brings you a vast collection of captivating images contributed by the creative Unsplash community.",
+    link: "https://github.com/Lamboserker/PixPulse",
+    isBigTitle: true,
+    image: Github, 
+    cssClass: "pixpulse-entry",
+  },
+  {
+    title: "Watch code",
+    description: "Visit GitHub to see the code.",
+    link: "https://github.com/Lamboserker/COLA_HOMEPAGE",
+    isBigTitle: false,
+    image: Github,
+  },
+  {
+    title: "Claims",
+    description:
+      "This project is a simple web application designed for managing case numbers and claims. It is constructed using Node.js with Express for the backend, and React for the frontend. The application facilitates users to: Register and login Add, update, and delete claims Generate an email draft for a payment plan based on the claims",
+    link: "https://github.com/Lamboserker/PixPulse",
+    isBigTitle: true,
+    image: Github, 
+    cssClass: "claims-entry",
+  },
+  {
+    title: "Watch code",
+    description: "Visit GitHub to see the code.",
+    link: "https://github.com/Lamboserker/Forderungsaufsteller/",
+    isBigTitle: false,
+    image: Github,
+  },
+
+  {
+    title: "WebDsk",
+    description:
+      "WebDesk: A collaboration platform like Slack with video chats, messaging channels, and a whiteboard for real-time teamwork.",
+    link: "https://github.com/Lamboserker/PixPulse",
+    isBigTitle: true,
+    image: Github, 
+    cssClass: "webdesk-entry",
+  },
+  {
+    title: "Watch code",
+    description: "Visit GitHub to see the code.",
+    link: "https://github.com/Lamboserker/Forderungsaufsteller/",
+    isBigTitle: false,
+    image: Github,
+  },
+
 ];

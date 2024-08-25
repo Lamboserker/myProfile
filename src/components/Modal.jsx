@@ -47,10 +47,10 @@ const SpringModal = ({ isOpen, setIsOpen, sendStatus }) => {
               </h3>
               <p className="text-center mb-6">
                 {sendStatus === "success"
-                  ? "Your message has been sent. We will get back to you soon."
+                  ? "Your message has been sent. I will get back to you soon."
                   : sendStatus === "error"
                   ? "Please try again or contact us via phone or email."
-                  : "Please wait while we send your message..."}
+                  : "Please wait while I send your message..."}
               </p>
               <div className="info">
                 <p>
